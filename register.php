@@ -1,9 +1,9 @@
 <?php
 
-$servername = "127.0.0.1";      // Gunakan 127.0.0.1 agar lebih stabil di XAMPP
-$username   = "root";           // Username default XAMPP
-$password   = "";               // Kosongkan jika MySQL tidak pakai password
-$dbname     = "facebook_clone"; // Nama database
+$servername = "127.0.0.1";      
+$username   = "root";          
+$password   = "";               
+$dbname     = "facebook_clone"; 
 
 $conn = new mysqli("127.0.0.1", "root", "", "facebook_clone", 3307);
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dob       = $dob_year . '-' . $dob_month . '-' . $dob_day;
     $gender    = $_POST['gender'] ?? '';
     $email     = $_POST['email'] ?? '';
-    $password  = password_hash($_POST['password'], PASSWORD_DEFAULT); // Enkripsi password
+    $password  = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
     $sql = "INSERT INTO users (firstname, surname, dob, gender, email, password)
             VALUES ('$firstname', '$surname', '$dob', '$gender', '$email', '$password')";
@@ -35,8 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-
-// ---------------------------
 $conn->close();
 ?>
 
