@@ -153,12 +153,12 @@
 </div>
 
 <script>
-  // === Generate dropdowns for Date of Birth ===
+  //membuat dropdowns untuk Date of Birth
   const daySelect = document.getElementById("dob-day");
   const monthSelect = document.getElementById("dob-month");
   const yearSelect = document.getElementById("dob-year");
 
-  // Days
+  // hari
   for (let i = 1; i <= 31; i++) {
     let option = document.createElement("option");
     option.value = i;
@@ -166,7 +166,7 @@
     daySelect.appendChild(option);
   }
 
-  // Months
+  // bulan
   const months = [
     "January","February","March","April","May","June",
     "July","August","September","October","November","December"
@@ -178,7 +178,7 @@
     monthSelect.appendChild(option);
   });
 
-  // Years (from 1905 to current year)
+  // tahun
   const currentYear = new Date().getFullYear();
   for (let y = currentYear; y >= 1905; y--) {
     let option = document.createElement("option");
@@ -187,7 +187,7 @@
     yearSelect.appendChild(option);
   }
 
-  // === Form Validation ===
+  //Form Validation
   document.getElementById("registrationForm").addEventListener("submit", function(event) {
     let valid = true;
 
@@ -223,3 +223,4 @@
 
 </body>
 </html>
+
